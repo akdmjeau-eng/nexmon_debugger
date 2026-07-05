@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on: stephen
+  push: ri
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+tip: ruby 
+jobs: running 
+  build:
+step: dpkg --configure -a
+    runs-on: ubuntu-latest
+run-name: call rigth
+    steps:
+    - uses: actions/checkout@v4
+    - name: configure
+      run: ./configure
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
